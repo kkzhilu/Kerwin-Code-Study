@@ -13,13 +13,11 @@ import java.util.List;
  */
 public class ThreadDemo {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 100000; i++) {
             list.add((int)(Math.random() * 100));
         }
-
-        Thread.sleep(5 * 1000);
 
         threadTest(list);
     }
@@ -32,7 +30,7 @@ public class ThreadDemo {
             list.forEach(integer -> {
                 int curr = integer;
             });
-            System.out.println(System.currentTimeMillis() - start);
+            System.out.println("耗时:" + (System.currentTimeMillis() - start));
         }).run();
     }
 }

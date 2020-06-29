@@ -37,4 +37,14 @@ public class Demo {
 
         return System.currentTimeMillis() - start;
     }
+
+    private static long getTimeFor(List<Integer> list) {
+        long start = System.currentTimeMillis();
+
+        for (Integer integer : list) {
+            int curr = integer;
+        }
+
+        return System.currentTimeMillis() - start;
+    }
 }
