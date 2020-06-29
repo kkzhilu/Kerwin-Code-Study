@@ -6,12 +6,12 @@ import java.util.List;
 /**
  * ******************************
  * author：      Kerwin
- * createTime:   2020/6/29 0:18
+ * createTime:   2020/6/29 15:09
  * description:  Lambda foreach
  * version:      V1.0
  * ******************************
  */
-public class Demo {
+public class ThreadDemo {
 
     public static void main(String[] args) throws InterruptedException {
         List<Integer> list = new ArrayList<>();
@@ -21,20 +21,18 @@ public class Demo {
 
         Thread.sleep(5 * 1000);
 
-        System.out.println("foreach time one: " + getTime(list));
-
-        System.out.println("分割线...");
-
-        System.out.println("foreach time two: " + getTime(list));
+        threadTest(list);
     }
 
-    private static long getTime(List<Integer> list) {
-        long start = System.currentTimeMillis();
+    private static void threadTest(List<Integer> list) {
+        new Thread(() -> {
+            System.out.println("分割线...");
 
-        list.forEach(integer -> {
-            int curr = integer;
-        });
-
-        return System.currentTimeMillis() - start;
+            long start = System.currentTimeMillis();
+            list.forEach(integer -> {
+                int curr = integer;
+            });
+            System.out.println(System.currentTimeMillis() - start);
+        }).run();
     }
 }
