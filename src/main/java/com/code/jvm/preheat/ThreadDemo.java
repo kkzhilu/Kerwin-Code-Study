@@ -7,7 +7,7 @@ import java.util.List;
  * ******************************
  * author：      Kerwin
  * createTime:   2020/6/29 15:09
- * description:  Lambda foreach
+ * description:  Two Lambda foreach
  * version:      V1.0
  * ******************************
  */
